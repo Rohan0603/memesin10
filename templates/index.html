@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reddit Memes</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10;url=https://memesin30.herokuapp.com/" />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: antiquewhite;
+        background: #121212;
+      }
+
+      .progress-container {
+        height: 0.8rem;
+        width: 32rem;
+        border-radius: 0.4rem;
+        background: #000;
+      }
+
+      .progress-container .progress {
+        height: 100%;
+        width: 0;
+        border-radius: 0.4rem;
+        background: #ff4754;
+        transition: width 0.4s ease;
+      }
+
+      img {
+        max-width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+      <h1>Enjoy the Reddit memes</h1>
+      </p>
+      <div>
+        <p>
+          <img src="{{meme_pic}}">
+        </p>
+      </div>
+      <p>
+      <div class="progress-container">
+        <div class="progress"></div>
+        </p>
+      </div>
+      <div>
+        <p>Current subreddit: {{subreddit}}</p>
+      </div>
+    </div>
+    <script>
+      const progressbar = document.querySelector(".progress");
+      const changeProgress = (progress) => {
+        progressbar.style.width = `${progress}%`;
+      };
+      setTimeout(() => changeProgress(10), 1000);
+      setTimeout(() => changeProgress(25), 2500);
+      setTimeout(() => changeProgress(50), 5000);
+      setTimeout(() => changeProgress(75), 7500);
+      setTimeout(() => changeProgress(100), 10000);
+    </script>
+  </body>
+</html>
